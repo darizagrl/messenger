@@ -25,7 +25,7 @@ public class TemplateEngine {
             } else {
                 throw new IllegalArgumentException("Subject shouldn't be empty");
             }
-            return template.replace("#{subject}", subject);
+            return template.getSubject().replace("#{subject}", subject);
         }
     }
 
