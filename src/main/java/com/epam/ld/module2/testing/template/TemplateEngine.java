@@ -18,15 +18,19 @@ public class TemplateEngine {
      */
     public String generateMessage(Template template, Client client) {
         try (Scanner scanner = new Scanner(System.in)) {
-            String subject;
-            System.out.print("Enter subject: ");
-            if (scanner.hasNext()) {
-                subject = scanner.nextLine();
-            } else {
-                throw new IllegalArgumentException("Subject shouldn't be empty");
-            }
-            return template.getSubject().replace("#{subject}", subject);
+            String subject = this.getInput(scanner, "Enter subject: ");
+            String messageWithSubject = template.getContent().replace("#{subject}", subject);
+            String body = this.getInput(scanner, "Enter body: ");
+            return messageWithSubject.replace("#{body}", body);
         }
     }
 
+    private String getInput(Scanner scanner, String output) throws IllegalArgumentException {
+        System.out.print(output);
+        if (scanner.hasNext()) {
+            return scanner.nextLine();
+        }
+        throw new IllegalArgumentException("Input shouldn't be empty");
+    }
 }
+

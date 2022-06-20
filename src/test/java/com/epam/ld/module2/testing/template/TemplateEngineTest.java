@@ -1,54 +1,1 @@
-package com.epam.ld.module2.testing.template;
-
-import com.epam.ld.module2.testing.Client;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
-
-import java.io.ByteArrayInputStream;
-
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
-class TemplateEngineTest {
-    @AfterEach
-    void tearDown() {
-        System.setIn(System.in);
-    }
-
-    private TemplateEngine templateEngine;
-    private Template template;
-    private Client client;
-
-
-    /**
-     * The system replaces variable placeholders like #{subject} from a template with values provided at runtime.
-     */
-    @ParameterizedTest()
-    @ValueSource(strings = {"subject", "test"})
-    void generateMessage_shouldReplacePlaceholderWhenReceivesValue(String subject) {
-        ByteArrayInputStream input = new ByteArrayInputStream(subject.getBytes());
-        System.setIn(input);
-        template = new Template();
-        templateEngine = new TemplateEngine();
-
-        String actualSubject = templateEngine.generateMessage(template, client);
-
-        Assertions.assertEquals(subject, actualSubject);
-    }
-
-    /**
-     * If at least one placeholder value is not provided at runtime – template generator should throw an exception.
-     */
-    @ParameterizedTest()
-    @ValueSource(strings = {" ", ""})
-    void generateMessage_shouldThrowExceptionWhenReceivesEmptyValue(String subject) {
-        ByteArrayInputStream input = new ByteArrayInputStream(subject.getBytes());
-        System.setIn(input);
-        template = new Template();
-        templateEngine = new TemplateEngine();
-
-        assertThrows(IllegalArgumentException.class,
-                () -> templateEngine.generateMessage(template, client), "Subject shouldn't be empty");
-    }
-}
+package com.epam.ld.module2.testing.template;import com.epam.ld.module2.testing.Client;import org.junit.jupiter.api.AfterEach;import org.junit.jupiter.api.Assertions;import org.junit.jupiter.api.Test;import org.junit.jupiter.api.condition.DisabledForJreRange;import org.junit.jupiter.api.condition.JRE;import org.junit.jupiter.params.ParameterizedTest;import org.junit.jupiter.params.provider.ValueSource;import java.io.ByteArrayInputStream;import static org.junit.jupiter.api.Assertions.assertThrows;class TemplateEngineTest {    @AfterEach    void tearDown() {        System.setIn(System.in);    }    private TemplateEngine templateEngine;    private Template template;    private Client client;    /**     * The system replaces variable placeholders like #{subject} from a template with values provided at runtime.     */    @Test    @DisabledForJreRange(min = JRE.JAVA_12, max = JRE.JAVA_15)    void generateMessage_shouldReplacePlaceholderWhenReceivesValue() {        ByteArrayInputStream input = new ByteArrayInputStream("testSubject\ntestBody".getBytes());        System.setIn(input);        template = new Template("Subject: #{subject} " + "Body: #{body}");        templateEngine = new TemplateEngine();        String actualMessage = templateEngine.generateMessage(template, client);        Assertions.assertEquals("Subject: testSubject " + "Body: testBody", actualMessage);    }    /**     * If at least one placeholder value is not provided at runtime – template generator should throw an exception.     */    @ParameterizedTest()    @ValueSource(strings = {"subject", " ", ""})    void generateMessage_shouldThrowExceptionWhenReceivesEmptyValue(String subject) {        ByteArrayInputStream input = new ByteArrayInputStream(subject.getBytes());        System.setIn(input);        template = new Template("Subject:  #{subject} " + "Body:  #{body}");        templateEngine = new TemplateEngine();        assertThrows(IllegalArgumentException.class,                () -> templateEngine.generateMessage(template, client), "Input shouldn't be empty");    }    /**     * Template generator ignores values for variables provided at runtime that aren’t found from the template.     */    @Test    void generateMessage_shouldIgnoreValuesForVariablesMissedInTemplate() {        ByteArrayInputStream input = new ByteArrayInputStream(("testSubject\ntestBody\ntestIgnore").getBytes());        System.setIn(input);        template = new Template("Subject: #{subject} " + "Body: #{body}");        templateEngine = new TemplateEngine();        String actualSubject = templateEngine.generateMessage(template, client);        Assertions.assertEquals("Subject: testSubject " + "Body: testBody", actualSubject);    }    /**     * System should support values passed in runtime with #{…}.     * E.g. template is  “Some text: #{value}” and  at runtime #{value} passed as  #{tag}.     * Output should be “Some text: #{tag}”.     */    // The regex for this case would be #(\{.+\}) - but it works even without it.    @Test    void generateMessage_shouldSupportFormat() {        ByteArrayInputStream input = new ByteArrayInputStream(("testSubject\n#{tag}").getBytes());        System.setIn(input);        template = new Template("Subject: #{subject} " + "Body: #{body}");        templateEngine = new TemplateEngine();        String actualSubject = templateEngine.generateMessage(template, client);        Assertions.assertEquals("Subject: testSubject " + "Body: #{tag}", actualSubject);    }}
