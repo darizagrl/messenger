@@ -12,10 +12,9 @@ class FileMailServerTest {
 
     @Test
     void send_shouldPrintToFile() {
-        String inputFile = "templateWithPlaceholders.txt";
         String outputFile = "template.txt";
         String message = "Subject: #{subject} " + "Body: #{body}";
-        FileMailServer fileMailServer = new FileMailServer(inputFile, outputFile);
+        FileMailServer fileMailServer = new FileMailServer(outputFile);
 
         assertAll(() -> fileMailServer.send("mail@email.com", message));
     }

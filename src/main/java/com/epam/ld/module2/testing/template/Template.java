@@ -5,10 +5,7 @@ package com.epam.ld.module2.testing.template;
  */
 public class Template {
 
-    private String content;
-
-    public Template() {
-    }
+    private final String content;
 
     public Template(String content) {
         this.content = content;
@@ -16,9 +13,5 @@ public class Template {
 
     public String getContent() {
         return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
     }
 }

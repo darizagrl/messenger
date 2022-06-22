@@ -2,7 +2,7 @@ package com.epam.ld.module2.testing.template;
 
 import com.epam.ld.module2.testing.Client;
 
-import java.util.Scanner;
+import java.util.List;
 
 /**
  * The type Template engine.
@@ -16,21 +16,10 @@ public class TemplateEngine {
      * @param client   the client
      * @return the string
      */
-    public String generateMessage(Template template, Client client) {
-        try (Scanner scanner = new Scanner(System.in)) {
-            String subject = this.getInput(scanner, "Enter subject: ");
-            String messageWithSubject = template.getContent().replace("#{subject}", subject);
-            String body = this.getInput(scanner, "Enter body: ");
-            return messageWithSubject.replace("#{body}", body);
-        }
+    public String generateMessage(List<String> values, Template template, Client client) {
+        String messageWithSubject = template.getContent().replace("#{subject}", values.get(0));
+        return messageWithSubject.replace("#{body}", values.get(1));
     }
 
-    private String getInput(Scanner scanner, String output) throws IllegalArgumentException {
-        System.out.print(output);
-        if (scanner.hasNext()) {
-            return scanner.nextLine();
-        }
-        throw new IllegalArgumentException("Input shouldn't be empty");
-    }
 }
 
