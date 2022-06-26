@@ -1,8 +1,6 @@
 
 P
  .idea/modules/messenger.main.iml,7\2\7210b90bcb4322040d020af0ecb1ac4986c47c5c
-?
-settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 ;
 gradlew.bat,2\a\2a45a911a8f1836b0b6c5b758962572012d8f8c3
 X
@@ -23,8 +21,6 @@ w
 G.idea/sonarlint/issuestore/e/1/e1f2dc84f565ee8ad14a89aa864c602bc570e082,9\4\9402a784b031285418ea27cc69dcfe1354d165ac
 \
 ,.idea/inspectionProfiles/Project_Default.xml,4\9\496a238a6afa168dbaf6efd37bb459331589579c
-<
-build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 w
 G.idea/sonarlint/issuestore/9/4/9402a784b031285418ea27cc69dcfe1354d165ac,7\f\7fab89e3902fb70d9f9c5bad1132bd7fb9d2e8af
 w
