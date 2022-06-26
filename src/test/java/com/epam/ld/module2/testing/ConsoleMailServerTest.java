@@ -26,6 +26,7 @@ class ConsoleMailServerTest {
         System.setOut(System.out);
     }
 
+    @Console
     @Test
     void send_shouldPrintToConsole() {
         ByteArrayInputStream input = new ByteArrayInputStream("testSubject\ntestBody".getBytes());

@@ -17,6 +17,10 @@ public class TemplateEngine {
      * @return the string
      */
     public String generateMessage(List<String> values, Template template, Client client) {
+        if (values.size() < 2) {
+            throw new IllegalArgumentException("Input shouldn't be empty");
+        }
+
         String messageWithSubject = template.getContent().replace("#{subject}", values.get(0));
         return messageWithSubject.replace("#{body}", values.get(1));
     }
