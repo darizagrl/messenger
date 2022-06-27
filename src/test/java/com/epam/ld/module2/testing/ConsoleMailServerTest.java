@@ -14,6 +14,9 @@ class ConsoleMailServerTest {
 
     private ByteArrayOutputStream outputStream;
 
+    /**
+     * Mock reading from console
+     */
     @BeforeEach
     void setUp() {
         outputStream = new ByteArrayOutputStream();
