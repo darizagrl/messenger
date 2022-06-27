@@ -10,8 +10,9 @@ import java.util.List;
  * The type Messenger.
  */
 public class Messenger {
-    private MailServer mailServer;
-    private TemplateEngine templateEngine;
+
+    private final MailServer mailServer;
+    private final TemplateEngine templateEngine;
 
     /**
      * Instantiates a new Messenger.

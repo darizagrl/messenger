@@ -41,5 +41,4 @@ class FileTestMailServerTest {
                 () -> assertTrue(Files.exists(templateFile), "File should exist"));
     }
 
-
 }
