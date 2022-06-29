@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="7.6.1">
+<file name="C:\Development\java\mentoring\messenger\messenger\app\src\main\java\com\epam\ld\module2\testing\Client.java">
+</file>
+<file name="C:\Development\java\mentoring\messenger\messenger\app\src\main\java\com\epam\ld\module2\testing\ConsoleMailServer.java">
+</file>
+<file name="C:\Development\java\mentoring\messenger\messenger\app\src\main\java\com\epam\ld\module2\testing\FileMailServer.java">
+</file>
+<file name="C:\Development\java\mentoring\messenger\messenger\app\src\main\java\com\epam\ld\module2\testing\MailServer.java">
+</file>
+<file name="C:\Development\java\mentoring\messenger\messenger\app\src\main\java\com\epam\ld\module2\testing\Main.java">
+<error line="15" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
+</file>
+<file name="C:\Development\java\mentoring\messenger\messenger\app\src\main\java\com\epam\ld\module2\testing\Messenger.java">
+<error line="35" column="42" severity="error" message="Expected @param tag for &apos;values&apos;." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
+</file>
+<file name="C:\Development\java\mentoring\messenger\messenger\app\src\main\java\com\epam\ld\module2\testing\template\Template.java">
+</file>
+<file name="C:\Development\java\mentoring\messenger\messenger\app\src\main\java\com\epam\ld\module2\testing\template\TemplateEngine.java">
+<error line="19" column="48" severity="error" message="Expected @param tag for &apos;values&apos;." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
+</file>
+</checkstyle>

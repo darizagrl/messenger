@@ -4,6 +4,22 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/app" name="app">
+                <projects>
+                  <project path="$PROJECT_DIR$/app" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/bdd-cucumber" name="bdd-cucumber">
+                <projects>
+                  <project path="$PROJECT_DIR$/bdd-cucumber" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
         <option name="disableWrapperSourceDistributionNotification" value="true" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -11,9 +27,32 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/bdd-cucumber" />
           </set>
         </option>
-        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../Program Files/gradle-6.7.1-all/gradle-6.7.1" />
+        <option name="gradleJvm" value="1.8 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/app" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/bdd-cucumber" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../Program Files/gradle-6.7.1-all/gradle-6.7.1" />
+        <option name="gradleJvm" value="1.8 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/bdd-cucumber" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>

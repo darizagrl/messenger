@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.epam.ld.module2.testing.template.TemplateEngineTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2022-06-29T15:54:44" hostname="LAPTOP-TEC28GFT" time="0.077">
+  <properties/>
+  <testcase name="generateMessage_shouldSupportFormat()" classname="com.epam.ld.module2.testing.template.TemplateEngineTest" time="0.004"/>
+  <testcase name="generateMessage_shouldIgnoreValuesForVariablesMissedInTemplate()" classname="com.epam.ld.module2.testing.template.TemplateEngineTest" time="0.012"/>
+  <testcase name="generateMessage_shouldReplacePlaceholderWhenReceivesValue()" classname="com.epam.ld.module2.testing.template.TemplateEngineTest" time="0.003"/>
+  <testcase name="Generating message from template: " classname="com.epam.ld.module2.testing.template.TemplateEngineTest" time="0.001"/>
+  <testcase name="Generating message from template: " classname="com.epam.ld.module2.testing.template.TemplateEngineTest" time="0.001"/>
+  <testcase name="generateMessage_shouldReplacePlaceholders()" classname="com.epam.ld.module2.testing.template.TemplateEngineTest" time="0.006"/>
+  <testcase name="[1] subject" classname="com.epam.ld.module2.testing.template.TemplateEngineTest" time="0.018"/>
+  <testcase name="[2]  " classname="com.epam.ld.module2.testing.template.TemplateEngineTest" time="0.002"/>
+  <testcase name="[3] " classname="com.epam.ld.module2.testing.template.TemplateEngineTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

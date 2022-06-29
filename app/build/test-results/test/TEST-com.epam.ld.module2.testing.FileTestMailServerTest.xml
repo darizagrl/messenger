@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.epam.ld.module2.testing.FileTestMailServerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-06-29T15:54:43" hostname="LAPTOP-TEC28GFT" time="0.045">
+  <properties/>
+  <testcase name="send_shouldPrintToFile()" classname="com.epam.ld.module2.testing.FileTestMailServerTest" time="0.027"/>
+  <testcase name="send_shouldPrintToFile(Path)" classname="com.epam.ld.module2.testing.FileTestMailServerTest" time="0.017"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
